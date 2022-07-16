@@ -32,7 +32,7 @@ function ProductCarousel() {
   ) : error ? (
     <Message variant="danger">{error}</Message>
   ) : (
-    <Carousel pause="hover" className="bg-dark">
+    <Carousel pause="hover" className="bg-dark ">
       {products.map((product) => (
         <Carousel.Item key={product._id}>
           <Link to={`/product/${product._id}`}>
@@ -40,7 +40,7 @@ function ProductCarousel() {
 
             <Carousel.Caption className="carousel.caption">
               <h4>
-                {product.name} (₹{product.price})
+                {product.name} (${product.price})
               </h4>
             </Carousel.Caption>
           </Link>

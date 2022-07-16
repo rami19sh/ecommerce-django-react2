@@ -11,9 +11,9 @@ import Rating from "./Rating";
 
 function Product({ product }) {
   return (
-    <Card className="my-3 p-3 rounded">
+    <Card className="my-3 p-3 rounded" style={{ height: '400px' }}>
       <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} />
+        <Card.Img src={product.image} style={{ height: '230px' }} />
       </Link>
 
       <Card.Body>
@@ -31,7 +31,7 @@ function Product({ product }) {
           />
         </Card.Text>
 
-        <Card.Text as="h3">₹{product.price}</Card.Text>
+        <Card.Text as="h3">${product.price}</Card.Text>
       </Card.Body>
     </Card>
   );

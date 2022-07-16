@@ -32,7 +32,7 @@ function Header() {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg="black" variant="dark" expand="lg" collapseOnSelect style={{ height: "150px" }}>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
