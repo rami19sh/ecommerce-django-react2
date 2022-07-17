@@ -1,9 +1,8 @@
 import pytest
-
 # @pytest.mark.django_db
 # def test_product_created():
 #   Product.objects.create
-from rest_framework.reverse import reverse
+# from rest_framework.reverse import reverse
 from rest_framework.test import APIClient
 
 from base.models import Product
