@@ -31,7 +31,5 @@ def test_login():
     print(response.data)
     assert response.status_code==200
 
-def test_login2():
-    response = client.post('/api/users/login/', dict(username="motaz123@abc.com", password="991594123rami"))
-    print(response.data)
+
 
