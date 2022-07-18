@@ -26,7 +26,6 @@ def test_product_creation():
 
 
 
-
 # Api test  - Integration testing
 def test_api_product_creation():
     client = APIClient()
@@ -36,3 +35,8 @@ def test_api_product_creation():
     # data = response.data
 
     assert response.status_code == 200
+
+def test_details_product():
+    client=APIClient()
+    response=client.get("/api/products/18")
+    print(response.data)

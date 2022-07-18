@@ -43,3 +43,14 @@ def test_register_user():
     data = response.data
 
     assert data["name"] == payload["name"]
+
+
+
+def test_login():
+    client=APIClient()
+    playload=dict(
+        username="sami1992@gmail.com",
+        password="rami991594123"
+    )
+    response=client.post('/api/login/',playload)
+    print(response.status_code)
