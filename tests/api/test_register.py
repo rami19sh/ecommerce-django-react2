@@ -31,5 +31,8 @@ def test_login():
     print(response.data)
     assert response.status_code==200
 
+def test_fail():
+    assert 1==2
+
 
 
