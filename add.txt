@@ -1,0 +1,15 @@
+{
+    "fields":
+    {
+        "project":
+        {
+            "key":"DE"
+        },
+        "summary":"test if its work",
+        "description":"create of an issue project: ",
+        "issuetype":
+        {
+            "name":"Bug"
+        }
+    }
+}
