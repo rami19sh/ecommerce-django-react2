@@ -54,6 +54,5 @@ def test_register_user():
 #     )
 #     response=client.post('/api/login/',playload)
 #     print(response.status_code)
-def test_fail():
-    assert 1==2
+
 
