@@ -6,7 +6,7 @@ from rest_framework.test import APIClient
 
 client = APIClient()
 
-
+#aaaaa
 @pytest.mark.django_db
 def test_check_reg():
     payload = dict(
