@@ -36,7 +36,3 @@
 #
 #     assert response.status_code == 200
 #
-# def test_details_product():
-#     client=APIClient()
-#     response=client.get("/api/products/18")
-#     print(response.data)

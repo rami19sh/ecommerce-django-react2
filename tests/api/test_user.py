@@ -54,3 +54,6 @@
 #     )
 #     response=client.post('/api/login/',playload)
 #     print(response.status_code)
+def test_fail():
+    assert 1==2
+
