@@ -3,9 +3,9 @@
     {
         "project":
         {
-            "key":"DE"
+            "key":"DP"
         },
-        "summary":"test if its work",
+        "summary":"New issue found",
         "description":"create of an issue project: ",
         "issuetype":
         {

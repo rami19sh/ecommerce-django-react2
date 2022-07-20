@@ -21,7 +21,7 @@ def create_product():
 def test_product_creation():
   p = create_product()
   assert isinstance(p, Product) is True
-  assert p.name == " Product Name2 "
+  assert p.name == " Product Name "
 
 #aa
 
