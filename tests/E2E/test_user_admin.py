@@ -123,32 +123,32 @@ def driver():
 #     assert order_summ.is_displayed() ==True
 
 
-def test_positive_login(driver):
-    driver.get("http://127.0.0.1:8000/#/")
-    driver.set_window_size(1552, 840)
-    driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
-    time.sleep(2)
-    driver.find_element(By.ID, "email").click()
-    time.sleep(2)
-    driver.find_element(By.ID, "email").send_keys("sami1992@gmail.com")
-    driver.find_element(By.ID, "password").send_keys("rami991594123")
-    driver.find_element(By.ID, "password").send_keys(Keys.ENTER)
-    time.sleep(3)
-    selector_login=driver.find_element(By.CSS_SELECTOR,"#username")
-    assert selector_login.is_displayed()
-
-
-
-def test_nigative_login(driver):
-    driver.get("http://127.0.0.1:8000/#/")
-    driver.set_window_size(1552, 840)
-    driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
-    time.sleep(2)
-    driver.find_element(By.ID, "email").click()
-    time.sleep(2)
-    driver.find_element(By.ID, "email").send_keys("sami122@gmail.com")
-    driver.find_element(By.ID, "password").send_keys("rami991594123")
-    driver.find_element(By.ID, "password").send_keys(Keys.ENTER)
-    time.sleep(3)
-    error_msg=driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > div.fade.alert.alert-danger.show")
-    assert "no active account found" in error_msg.text.lower()
+# def test_positive_login(driver):
+#     driver.get("http://127.0.0.1:8000/#/")
+#     driver.set_window_size(1552, 840)
+#     driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
+#     time.sleep(2)
+#     driver.find_element(By.ID, "email").click()
+#     time.sleep(2)
+#     driver.find_element(By.ID, "email").send_keys("sami1992@gmail.com")
+#     driver.find_element(By.ID, "password").send_keys("rami991594123")
+#     driver.find_element(By.ID, "password").send_keys(Keys.ENTER)
+#     time.sleep(3)
+#     selector_login=driver.find_element(By.CSS_SELECTOR,"#username")
+#     assert selector_login.is_displayed()
+#
+#
+#
+# def test_nigative_login(driver):
+#     driver.get("http://127.0.0.1:8000/#/")
+#     driver.set_window_size(1552, 840)
+#     driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
+#     time.sleep(2)
+#     driver.find_element(By.ID, "email").click()
+#     time.sleep(2)
+#     driver.find_element(By.ID, "email").send_keys("sami122@gmail.com")
+#     driver.find_element(By.ID, "password").send_keys("rami991594123")
+#     driver.find_element(By.ID, "password").send_keys(Keys.ENTER)
+#     time.sleep(3)
+#     error_msg=driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > div.fade.alert.alert-danger.show")
+#     assert "no active account found" in error_msg.text.lower()
