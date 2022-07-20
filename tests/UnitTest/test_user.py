@@ -8,6 +8,18 @@ from base.models import Product
 '''
 Unit tests -> checking user creation func
 '''
+client = APIClient()
+@pytest.mark.django_db
+def test_check_reg():
+    payload = dict(
+        name="motaz",
+        email="motaz123@abc.com",
+        password="991594123rami"
+    )
+    response = client.post('/api/users/register/', payload)
+    data = response.data
+    assert data["name"]==payload["name"]
+
 @pytest.mark.django_db
 def test_user_create():
     User.objects.create_user('test','test@test.com','test')
@@ -46,13 +58,6 @@ def test_register_user():
 
 
 
-# def test_login():
-#     client=APIClient()
-#     playload=dict(
-#         username="sami1992@gmail.com",
-#         password="rami991594123"
-#     )
-#     response=client.post('/api/login/',playload)
-#     print(response.status_code)
+
 
 
