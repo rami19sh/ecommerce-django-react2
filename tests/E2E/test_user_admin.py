@@ -16,6 +16,34 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 import pytest
+import string
+import random
+from random import randint
+
+def do_email():
+    n=randint(5,11)
+    email=""
+    for i in range(n):
+        email+=random.choice(string.ascii_letters.lower())
+    email+=str(randint(1000,100000))
+    list1=["gmail","outlook","yahoo"]
+    email+="@"+list1[randint(-1,2)]+".com"
+    return email
+
+def do_password():
+    n=randint(8,15)
+    password=""
+    for i in range(n):
+        password+=random.choice(string.ascii_letters.lower())
+    password+=str(randint(1000,1000000))
+    return password
+
+def do_name():
+    n=randint(4,8)
+    name=""
+    for i in range(n):
+        name+=random.choice(string.ascii_letters.lower())
+    return name
 
 
 @pytest.fixture()
@@ -23,9 +51,29 @@ def driver():
     # chrome_driver_binary = r"./chromedriver"
     # ser_chrome = ChromeService(chrome_driver_binary)
     driver = webdriver.Chrome(ChromeDriverManager().install())
-
     yield driver
     driver.close()
+
+def test_a1(driver):
+    driver.get("http://127.0.0.1:8000/#/")
+    driver.set_window_size(1552, 832)
+    driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
+    time.sleep(2)
+    driver.find_element(By.LINK_TEXT, "Register").click()
+    time.sleep(2)
+    driver.find_element(By.ID, "name").click()
+    time.sleep(2)
+    name=do_name()
+    driver.find_element(By.ID, "name").send_keys(name)
+    driver.find_element(By.ID, "email").send_keys(do_email())
+    password=do_password()
+    driver.find_element(By.ID, "password").send_keys(password)
+    driver.find_element(By.ID, "passwordConfirm").send_keys(password)
+    time.sleep(2)
+    driver.find_element(By.CSS_SELECTOR, ".mt-3").click()
+    time.sleep(2)
+    username=driver.find_element(By.CSS_SELECTOR,"#username").text
+    assert username.lower()==name
 
 # def test_update_price_of_product(driver):
 #         driver.get("http://127.0.0.1:8000/#/")
