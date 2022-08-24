@@ -54,7 +54,7 @@ def driver():
     yield driver
     driver.close()
 
-def test_a1(driver):
+def register(driver):
     driver.get("http://127.0.0.1:8000/#/")
     driver.set_window_size(1552, 832)
     driver.find_element(By.CSS_SELECTOR, ".nav-link:nth-child(2)").click()
