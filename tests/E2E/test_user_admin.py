@@ -105,7 +105,7 @@ def register(driver):
 #         actions.move_to_element(element).release().perform()
 #         driver.find_element(By.ID, "id_price").click()
 #         driver.find_element(By.ID, "id_price").clear()
-#         driver.find_element(By.ID, "id_price").send_keys("849.00")
+#         driver.find_element(By.ID, "id_price").send_keys("879.00")
 #         time.sleep(3)
 #         driver.find_element(By.NAME, "_save").click()
 #         time.sleep(3)
